@@ -1219,7 +1219,7 @@ public class NewChunk extends Chunk {
     if( _naCnt==0 && (min_l.compareTo(max_l)==0) && xmin >=0 && fitLong) {
       return new C0LChunk(min_l.longValue(), _len);
     }
-    if( _naCnt==0 && (min==max) && xmin<0 ) {
+    if( _naCnt==0 && (min==max) && (xmin<0 || !fitLong) ) {
       return new C0DChunk(min, _len);
     }
     // Compute min & max, as scaled integers in the xmin scale.
